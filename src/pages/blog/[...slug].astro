@@ -1,0 +1,34 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+// export async function getStaticPaths() {
+//   const posts = await getCollection("blog");
+//   return posts.map((post) => ({
+//     params: { slug: post.slug },
+//     props: post,
+//   }));
+// }
+// type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+// const { Content } = await post.content.render();
+
+// microCMS呼び出し
+import { getBlogs } from '../../libs/microcms';
+
+export async function getStaticPaths() {
+  const data = await getBlogs({ limit: 100 });
+  const posts = data.contents;
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+---
+
+<BlogPost {...post}>
+  <!-- <Content /> -->
+  <Fragment set:html={post.content} />
+</BlogPost>

@@ -7,12 +7,20 @@ import type {
 } from "microcms-js-sdk";
 
 // 型定義
-export type Blogs = {
+export interface Blogs {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt?: string;
+  revisedAt?: string;
+  toppage: boolean;
+  slug: string;
   title: string;
   content: string;
-  eyecatch: string;
-  category: string;
-};
+  description: string;
+  eyecatch?: MicroCMSImage;
+  category?: string;
+}
 export type BlogsResponse = MicroCMSListResponse<Blogs>;
 
 // clientの作成
@@ -23,5 +31,8 @@ const client = createClient({
 
 // 'blogs' APIからIDを指定して個別データを取得する関数
 export const getBlogs = async (queries?: MicroCMSQueries) => {
+  return await client.get<BlogsResponse>({ endpoint: "blogs", queries });
+};
+export const getBlogDetail = async (queries?: MicroCMSQueries) => {
   return await client.get<BlogsResponse>({ endpoint: "blogs", queries });
 };
