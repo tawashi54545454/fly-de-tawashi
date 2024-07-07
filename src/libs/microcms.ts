@@ -1,4 +1,5 @@
 // SDK利用準備
+import { Debug } from "astro:components";
 import { createClient } from "microcms-js-sdk";
 import type {
   MicroCMSListResponse,
@@ -29,10 +30,21 @@ const client = createClient({
   apiKey: import.meta.env.MICROCMS_API_KEY,
 });
 
+function tws(url: string): string {
+  return url.replace(
+    /https:\/\/images.microcms-assets.io\/assets\/[^"]+\/([^"]+)/g,
+    "https://tawashi.jp/assets/$1",
+  );
+}
+
 // 'blogs' APIからIDを指定して個別データを取得する関数
 export const getBlogs = async (queries?: MicroCMSQueries) => {
-  return await client.get<BlogsResponse>({ endpoint: "blogs", queries });
-};
-export const getBlogDetail = async (queries?: MicroCMSQueries) => {
-  return await client.get<BlogsResponse>({ endpoint: "blogs", queries });
+  const data = await client.get<BlogsResponse>({ endpoint: "blogs", queries });
+  data.contents.map((post) => {
+    if (post.eyecatch) {
+      post.eyecatch.url = tws(post.eyecatch.url);
+    }
+    post.content = tws(post.content);
+  });
+  return data;
 };

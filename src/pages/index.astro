@@ -2,7 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { getCollection } from "astro:content";
 import {
   SITE_TITLE,
   AUTHOR,
@@ -12,7 +11,8 @@ import {
   AVATAR_SRC,
 } from "../consts";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
-import { Card, Typo } from "@koibumi-design/solidjs";
+import TwitterIcon from "../components/icons/SkillIconsTwitter.astro";
+import { Card, Typo } from "../libs/solidjs";
 import PostCard from "../components/PostCard.astro";
 
 // const posts = (await getCollection("blog"))
@@ -46,16 +46,16 @@ const posts = data.contents.filter((post) => post.toppage);
           </Typo>
           <div>
             <Typo>
-              <strong> Contact me: </strong>
+              <strong> Contact: </strong>
             </Typo>
             <div id="contact">
               <a
                 class="icon-link"
-                href="https://github.com/koibumi-design"
+                href="https://twitter.com/tawashi_de_5454"
                 target="_blank"
-                aria-label="GitHub"
+                aria-label="Twitter"
               >
-                <GitHubIcon />
+                <TwitterIcon />
               </a>
             </div>
           </div>

@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = "空飛ぶたわし";
-export const AUTHOR = "たわし";
+export const AUTHOR = "台所用品たわし";
 
 export const SITE_DESCRIPTION =
   "ドローン申請ノウハウの記録、実際の空撮画像動画の記録";
@@ -11,7 +11,7 @@ export const FAVICON_SRC = "/favicon.svg";
 
 export const AVATAR_SRC = "/author.jfif";
 
-export const BIO = "旅先でドローンを飛ばす申請とその記録";
+export const BIO = "ドローン飛行申請とその飛行記録";
 
 export const GLOBAL_STYLE: "quartz" | "glass" | "lightGlass" = "glass";
 

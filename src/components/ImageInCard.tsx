@@ -1,6 +1,6 @@
 import { type Component, Show } from "solid-js";
 import styles from "./ImageInCard.module.scss";
-import { Typo } from "@koibumi-design/solidjs";
+import { Typo } from "../libs/solidjs";
 
 interface ImageInCard {
   linkTo: string;
