@@ -22,7 +22,7 @@ export default defineConfig({
       },
     }),
   ],
-  trailingSlash: "ignore",
+  trailingSlash: "never",
 });
 // https://astro.build/config
 // export default defineConfig({});
