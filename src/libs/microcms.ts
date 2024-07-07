@@ -12,13 +12,8 @@ export interface Category extends MicroCMSDate {
   id: string;
   name: string;
 }
-export interface Blogs {
+export interface Blogs extends MicroCMSDate {
   id: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt?: string;
-  revisedAt?: string;
-  toppage: boolean;
   slug: string;
   title: string;
   content: string;
@@ -49,7 +44,6 @@ export const getBlogs = async (queries?: MicroCMSQueries) => {
       post.eyecatch.url = tws(post.eyecatch.url);
     }
     post.content = tws(post.content);
-    console.log(post);
   });
   return data;
 };

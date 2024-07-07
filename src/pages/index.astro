@@ -54,7 +54,11 @@ const posts = data.contents.filter((post) => post.category?.id == 'toppage');
         <Typo variant="h3"> ご案内 </Typo>
       </Card>
       <section id="pinned-container">
-        {posts.map((post) => <PostCard {...post} slug={post.slug} />)}
+        {
+          posts.map((post) => (
+            <PostCard {...post} slug={post.slug} directory="." />
+          ))
+        }
       </section>
     </main>
     <Footer />

@@ -1,14 +1,14 @@
 ---
-import BlogPost from "../../layouts/BlogPost.astro";
+import BlogPost from "../layouts/BlogPost.astro";
 
 const post = Astro.props;
 
 // microCMS呼び出し
-import { getBlogs } from '../../libs/microcms';
+import { getBlogs } from '../libs/microcms';
 
 export async function getStaticPaths() {
   const data = await getBlogs({ limit: 100 });
-  const posts = data.contents.filter((post) => post.category?.id == 'flight');
+  const posts = data.contents.filter((post) => post.category?.id == 'toppage');
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,

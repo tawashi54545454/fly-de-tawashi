@@ -8,7 +8,7 @@ import { getBlogs } from '../../libs/microcms';
 
 export async function getStaticPaths() {
   const data = await getBlogs({ limit: 100 });
-  const posts = data.contents;
+  const posts = data.contents.filter((post) => post.category?.id == 'blog');
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,

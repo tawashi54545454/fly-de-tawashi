@@ -5,8 +5,10 @@ import {ImageInCard} from "./ImageInCard";
 
 import type { Blogs } from '../libs/microcms';
 
-interface Props extends Blogs {}
-const {slug, eyecatch, title, publishedAt, description} = Astro.props
+interface Props extends Blogs {
+  directory?: string;
+}
+const {slug, eyecatch, title, publishedAt, description, directory} = Astro.props
 
 // interface Props {
 //     slug: string
@@ -23,12 +25,12 @@ const {slug, eyecatch, title, publishedAt, description} = Astro.props
 <Card class="post-card" variant={GLOBAL_STYLE}>
   <ImageInCard
     client:only="solid-js"
-    linkTo={`/blog/${slug}`}
+    linkTo={`/${directory}/${slug}`}
     {title}
     image={eyecatch?.url}
   />
   <Typo variant="h4">
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/${directory}/${slug}`}>
       {title}
     </Link>
   </Typo>

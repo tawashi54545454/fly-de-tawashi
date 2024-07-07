@@ -11,7 +11,7 @@ export const FAVICON_SRC = "/favicon.png";
 export const AVATAR_SRC = "/author.jfif";
 
 export const BIO =
-  "たわしが個人として確認・申請してドローン飛行許可を貰い、実際の空撮に至るまでを一連の記事として公開していくblog";
+  "たわしがドローン飛行申請を行って、あちこちから許可を貰って、実際の空撮に至る一連の流れを公開していくblog";
 
 export const GLOBAL_STYLE: "quartz" | "glass" | "lightGlass" = "glass";
 
