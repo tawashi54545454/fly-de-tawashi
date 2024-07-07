@@ -1,6 +1,7 @@
 import { defineConfig, passthroughImageService } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import partytown from "@astrojs/partytown";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 
@@ -23,7 +24,17 @@ export default defineConfig({
     service: passthroughImageService(),
   },
   site: "https://fly.tawashi.jp",
-  integrations: [mdx(), sitemap(), solidJs()],
+  integrations: [
+    mdx(),
+    sitemap(),
+    solidJs(),
+    partytown({
+      // Adds dataLayer.push as a forwarding-event.
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 });
 // https://astro.build/config
 // export default defineConfig({});

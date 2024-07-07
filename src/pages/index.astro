@@ -2,22 +2,10 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import {
-  SITE_TITLE,
-  AUTHOR,
-  SITE_DESCRIPTION,
-  GLOBAL_STYLE,
-  BIO,
-  AVATAR_SRC,
-} from "../consts";
-import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import { SITE_TITLE, AUTHOR, SITE_DESCRIPTION, GLOBAL_STYLE, BIO, AVATAR_SRC} from "../consts";
 import TwitterIcon from "../components/icons/SkillIconsTwitter.astro";
 import { Card, Typo } from "../libs/solidjs";
 import PostCard from "../components/PostCard.astro";
-
-// const posts = (await getCollection("blog"))
-//   .filter((post) => post.data.pinned)
-//   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 // microCMS呼び出し
 import { getBlogs } from '../libs/microcms';
