@@ -23,9 +23,21 @@ const posts = data.contents.filter((post) => post.category?.id == 'toppage');
   <body>
     <Header />
     <main>
+      <Card variant={GLOBAL_STYLE}>
+        <Typo variant="h3"> このblogについて </Typo>
+      </Card>
+      <section id="pinned-container">
+        {
+          posts.map((post) => (
+            <PostCard {...post} slug={post.slug} directory="." />
+          ))
+        }
+      </section>
+
       <Card variant={GLOBAL_STYLE} id="avatar-bio">
         <img src={AVATAR_SRC} alt="avatar" />
         <section id="bio">
+          <Typo> <strong>Author:</strong> </Typo>
           <Typo emphasis={true} variant="h2">
             {AUTHOR}
           </Typo>
@@ -33,9 +45,7 @@ const posts = data.contents.filter((post) => post.category?.id == 'toppage');
             {BIO}
           </Typo>
           <div>
-            <Typo>
-              <strong> Contact: </strong>
-            </Typo>
+            <Typo> <strong> Contact: </strong> </Typo>
             <div id="contact">
               <a
                 class="icon-link"
@@ -49,17 +59,6 @@ const posts = data.contents.filter((post) => post.category?.id == 'toppage');
           </div>
         </section>
       </Card>
-
-      <Card variant={GLOBAL_STYLE}>
-        <Typo variant="h3"> ご案内 </Typo>
-      </Card>
-      <section id="pinned-container">
-        {
-          posts.map((post) => (
-            <PostCard {...post} slug={post.slug} directory="." />
-          ))
-        }
-      </section>
     </main>
     <Footer />
     <style>
