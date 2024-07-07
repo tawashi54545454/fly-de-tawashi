@@ -10,7 +10,7 @@ export const FAVICON_SRC = "/favicon.png";
 
 export const AVATAR_SRC = "/author.jfif";
 
-export const BIO = "ドローン飛行申請と飛行記録";
+export const BIO = "ドローン飛行申請と空撮";
 
 export const GLOBAL_STYLE: "quartz" | "glass" | "lightGlass" = "glass";
 
