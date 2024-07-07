@@ -1,6 +1,6 @@
 // SDK利用準備
 import { Debug } from "astro:components";
-import { createClient } from "microcms-js-sdk";
+import { createClient, type MicroCMSDate } from "microcms-js-sdk";
 import type {
   MicroCMSListResponse,
   MicroCMSQueries,
@@ -8,6 +8,10 @@ import type {
 } from "microcms-js-sdk";
 
 // 型定義
+export interface Category extends MicroCMSDate {
+  id: string;
+  name: string;
+}
 export interface Blogs {
   id: string;
   createdAt: string;
@@ -20,7 +24,7 @@ export interface Blogs {
   content: string;
   description: string;
   eyecatch?: MicroCMSImage;
-  category?: string;
+  category?: Category;
 }
 export type BlogsResponse = MicroCMSListResponse<Blogs>;
 
@@ -45,6 +49,7 @@ export const getBlogs = async (queries?: MicroCMSQueries) => {
       post.eyecatch.url = tws(post.eyecatch.url);
     }
     post.content = tws(post.content);
+    console.log(post);
   });
   return data;
 };

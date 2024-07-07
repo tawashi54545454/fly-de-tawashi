@@ -9,7 +9,7 @@ import PostCard from "../../components/PostCard.astro";
 import { getBlogs } from '../../libs/microcms';
 
 const data = await getBlogs({ limit: 100 });
-const posts = data.contents.filter((post) => post.category?.id == 'permission');
+const posts = data.contents.filter((post) => post.category?.id == 'kusatsu');
 
 ---
 

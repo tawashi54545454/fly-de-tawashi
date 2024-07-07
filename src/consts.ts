@@ -10,7 +10,8 @@ export const FAVICON_SRC = "/favicon.png";
 
 export const AVATAR_SRC = "/author.jfif";
 
-export const BIO = "ドローン飛行申請と空撮";
+export const BIO =
+  "たわしが個人として確認・申請してドローン飛行許可を貰い、実際の空撮に至るまでを一連の記事として公開していくblog";
 
 export const GLOBAL_STYLE: "quartz" | "glass" | "lightGlass" = "glass";
 

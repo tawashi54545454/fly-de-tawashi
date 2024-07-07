@@ -165,6 +165,10 @@ article {
     th {
       background: $color-primary-500;
       color: $color-slate-50;
+      p {
+        font-weight: bold;
+        color: $color-slate-100;
+      }
     }
 
     tr:nth-child(even) {
