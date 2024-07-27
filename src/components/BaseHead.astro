@@ -14,7 +14,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = '/author.jfif', article=false } = Astro.props;
-console.log(Astro.url);
+
 ---
 
 <!-- Global Metadata -->
@@ -32,7 +32,7 @@ console.log(Astro.url);
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="{article ? 'article' : 'website'}" />
+<meta property="og:type" content={article ? "article" : "website"} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
