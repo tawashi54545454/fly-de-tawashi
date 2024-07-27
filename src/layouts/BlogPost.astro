@@ -14,8 +14,8 @@ const {slug, eyecatch, title, createdAt, publishedAt, content, description} = As
 ---
 
 <html lang="ja-JP">
-  <head>
-    <BaseHead {title} {description} />
+  <head prefix="og: https://ogp.me/ns#">
+    <BaseHead {title} {description} image={eyecatch?.url} article={true} />
   </head>
 
   <body>

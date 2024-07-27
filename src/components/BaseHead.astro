@@ -2,17 +2,19 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.scss';
-import {FAVICON_SRC} from "../consts";
+import {SITE_TITLE, FAVICON_SRC} from "../consts";
 
 interface Props {
 	title: string;
 	description: string;
 	image?: string;
+  article?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/author.jfif', article=false } = Astro.props;
+console.log(Astro.url);
 ---
 
 <!-- Global Metadata -->
@@ -30,11 +32,12 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content="{article ? 'article' : 'website'}" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:site_name" content={SITE_TITLE} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
