@@ -46,10 +46,9 @@ const { title, description, image = '/author.jfif', article=false } = Astro.prop
 <meta name="twitter:site" content={TWITTER} />
 <meta name="twitter:creator" content={TWITTER} />
 
-<script
-  type="text/partytown"
-  src="https://www.googletagmanager.com/gtag/js?id=G-H23Y23RMK1"></script>
-<script type="text/partytown">
+<script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-H23Y23RMK1"
+></script>
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
@@ -59,6 +58,7 @@ const { title, description, image = '/author.jfif', article=false } = Astro.prop
 </script>
 
 <script
+  is:inline
   async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6690868515240304"
   crossorigin="anonymous"></script>

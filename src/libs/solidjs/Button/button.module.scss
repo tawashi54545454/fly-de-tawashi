@@ -21,13 +21,15 @@
     border-radius: 0.625rem;
     padding: 0.125rem 0.25rem;
   }
-  border: 2px solid;
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    color 0.3s ease;
-  cursor: pointer;
+  & {
+    border: 2px solid;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease,
+      color 0.3s ease;
+    cursor: pointer;
+  }
 
   &:active {
     transform: scale(0.95);
@@ -36,10 +38,11 @@
 
 .button-solid-primary {
   @include button-common;
-  background-color: $color-primary-500;
-  border-color: $color-primary-500;
-  color: $color-primary-50;
-
+  & {
+    background-color: $color-primary-500;
+    border-color: $color-primary-500;
+    color: $color-primary-50;
+  }
   &:hover {
     border-color: $color-primary-400;
     background-color: $color-primary-400;
@@ -48,10 +51,11 @@
 
 .button-light-primary {
   @include button-common;
-  background-color: rgba($color-primary-100, 0);
-  border-color: rgba($color-primary-100, 0);
-  color: $color-primary-500;
-
+  & {
+    background-color: rgba($color-primary-100, 0);
+    border-color: rgba($color-primary-100, 0);
+    color: $color-primary-500;
+  }
   &:hover {
     border-color: $color-primary-100;
     background-color: $color-primary-100;
@@ -67,10 +71,11 @@
 
 .button-outline-primary {
   @include button-common;
-  background-color: rgba($color-primary-50, 0);
-  border-color: $color-primary-500;
-  color: $color-primary-500;
-
+  & {
+    background-color: rgba($color-primary-50, 0);
+    border-color: $color-primary-500;
+    color: $color-primary-500;
+  }
   &:hover {
     border-color: $color-primary-300;
     color: $color-primary-300;
@@ -86,10 +91,11 @@
 
 .button-flat-primary {
   @include button-common;
-  background-color: $color-primary-100;
-  border-color: $color-primary-100;
-  color: $color-primary-500;
-
+  & {
+    background-color: $color-primary-100;
+    border-color: $color-primary-100;
+    color: $color-primary-500;
+  }
   &:hover {
     color: $color-primary-400;
     background-color: lighten($color-primary-100, 5%);
@@ -110,10 +116,11 @@
 
 .button-ghost-primary {
   @include button-common;
-  background-color: rgba($color-primary-500, 0);
-  border-color: $color-primary-500;
-  color: $color-primary-500;
-
+  & {
+    background-color: rgba($color-primary-500, 0);
+    border-color: $color-primary-500;
+    color: $color-primary-500;
+  }
   &:hover {
     color: $color-primary-50;
     background-color: $color-primary-500;
@@ -122,11 +129,12 @@
 
 .button-glow-primary {
   @include button-common;
-  background-color: $color-primary-500;
-  border-color: $color-primary-500;
-  color: $color-primary-50;
-  box-shadow: 0 0.125rem 1rem rgba($color-primary-500, 0.6);
-
+  & {
+    background-color: $color-primary-500;
+    border-color: $color-primary-500;
+    color: $color-primary-50;
+    box-shadow: 0 0.125rem 1rem rgba($color-primary-500, 0.6);
+  }
   &:hover {
     border-color: $color-primary-400;
     background-color: $color-primary-400;
