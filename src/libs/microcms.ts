@@ -32,7 +32,7 @@ const client = createClient({
 function tws(url: string): string {
   return url.replace(
     /https:\/\/images.microcms-assets.io\/assets\/[^"]+\/([^"]+)/g,
-    "https://tawashi.jp/assets/$1",
+    "https://fly.tawashi.jp/assets/$1",
   );
 }
 
