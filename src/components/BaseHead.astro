@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.scss';
-import {SITE_TITLE, FAVICON_SRC} from "../consts";
+import {SITE_TITLE, FAVICON_SRC, TWITTER} from "../consts";
 
 interface Props {
 	title: string;
@@ -38,13 +38,13 @@ console.log(Astro.url);
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:locale" content="ja-JP" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:domain" content={Astro.url.host} />
+<meta property="twitter:site" content={TWITTER} />
+<meta property="twitter:creator" content={TWITTER} />
 
 <script
   type="text/partytown"

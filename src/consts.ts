@@ -3,6 +3,7 @@
 
 export const SITE_TITLE = "空飛ぶたわし";
 export const AUTHOR = "台所用品たわし";
+export const TWITTER = "@tawashi_de_5454";
 
 export const SITE_DESCRIPTION = "ドローン申請ノウハウの記録、実際の空撮動画";
 
